@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Kinto/kinto-react-boilerplate#readme",
   "dependencies": {
+    "babel-plugin-transform-react-jsx-source": "^6.9.0",
     "babel-polyfill": "^6.16.0",
     "btoa": "^1.1.2",
     "kinto": "^1.2.2",
