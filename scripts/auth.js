@@ -1,6 +1,9 @@
-import btoa from "btoa";
+import btoa from "btoa"; //base64
 
 
+//es6 class
+//constructor 构造函数
+//使用snip
 export default class Auth {
   constructor(events, location) {
     this.events = events;

@@ -1,6 +1,7 @@
-const DEFAULT_SERVER = "https://kinto.dev.mozaws.net/v1";
+const DEFAULT_SERVER = "https://kinto.dev.mozaws.net/v1"; //kinto服务器地址
 
-
+//总的控制器
+//用类十分合适
 export default class Controller {
 
   constructor(components, events) {
@@ -8,7 +9,7 @@ export default class Controller {
     this.auth = components.auth;
     this.events = events;
 
-    this.events.on('auth:login', this.onLogin.bind(this));
+    this.events.on('auth:login', this.onLogin.bind(this));  //事件分发？
     this.events.on('action:start', this.onStart.bind(this));
     this.events.on('action:configure', this.onConfigure.bind(this));
     this.events.on('action:create', this.onCreate.bind(this));
@@ -28,7 +29,7 @@ export default class Controller {
 
   onStart() {
     // Start application with default config.
-    const previous = window.localStorage.getItem("config");
+    const previous = window.localStorage.getItem("config"); //本地浏览器缓存
     const config = previous ? JSON.parse(previous) : {server: DEFAULT_SERVER};
     this.dispatch('action:configure', config);
   }
@@ -38,7 +39,7 @@ export default class Controller {
     window.localStorage.setItem("config", JSON.stringify(config));
     this.events.emit("config:change", config);
 
-    this.auth.configure(config);
+    this.auth.configure(config); //添加配置
     this.auth.authenticate();
   }
 
@@ -48,7 +49,7 @@ export default class Controller {
   }
 
   onCreate(record) {
-    this.store.create(record);
+    this.store.create(record); //同步到store，store负责和远程服务器通信
   }
 
   onUpdate(record) {

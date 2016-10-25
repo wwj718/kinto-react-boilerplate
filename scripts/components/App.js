@@ -1,12 +1,13 @@
 import React, { PropTypes } from "react";
 
+//app 业务逻辑写这里
 
 export class Form extends React.Component {
   static contextTypes = {
     controller: PropTypes.object.isRequired
   };
 
-  constructor(props) {
+  constructor(props) { //props是什么
     super(props);
     this.state = {record: this.props.record || {}};
   }
@@ -14,7 +15,7 @@ export class Form extends React.Component {
   onFormSubmit(event) {
     event.preventDefault();
     const action = this.props.record ? 'update' : 'create';
-    this.context.controller.dispatch(`action:${action}`, this.state.record);
+    this.context.controller.dispatch(`action:${action}`, this.state.record); //触发事件,处理事件的控制器已经写好，很好的流
   }
 
   onChange(field, event) {
@@ -127,6 +128,8 @@ export class Preferences extends React.Component {
 }
 
 
+
+//这个是app入口
 export default class App extends React.Component {
   static childContextTypes = {
     controller: PropTypes.object
@@ -165,7 +168,7 @@ export default class App extends React.Component {
   onSyncClick() {
     this.props.controller.dispatch('action:sync');
   }
-
+  //render负责渲染自身?
   render() {
     const disabled = this.state.busy ? "disabled" : "";
     return (
