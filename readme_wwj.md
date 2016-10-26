@@ -32,9 +32,25 @@ Currently iframes and Chrome apps/extensions are not inspectable.
 *  JSX
   *  前端被“表现和逻辑层分离”这种思想“洗脑”太久
   *  JSX 让 JS 支持嵌入 HTML 不得不说是一种非常聪明的做法，让前端实现真正意义上的组件化成为了可能
+*  组件通信
+  *  父子组件间通信：通过 props 属性传递
+  *  非父子组件间的通信：使用全局事件 Pub/Sub 模式，在 componentDidMount 里面订阅事件，在 componentWillUnmount 里面取消订阅，当收到事件触发的时候调用 setState 更新 UI
+  *  比较复杂的应用，推荐使用类似 Flux 这种单项数据流架构
+*  react props state 对比
+  *  https://segmentfault.com/q/1010000002958539
+  *  props放初始化数据（诸如下拉菜单选项），一直不变的，state就是放要变的（诸如购物车物品总价）
 
 # 学会
 *  window.localStorage
+*  events
+*  state and props
+
+# 小结
+整个流程已经走通，核心概念学完
+
+# todo
+react bootstrap
 
 # 教程
 *  [react中文教程](http://reactjs.cn/react/docs/getting-started-zh-CN.html)
+*  [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs) 
