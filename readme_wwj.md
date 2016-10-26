@@ -49,7 +49,10 @@ Currently iframes and Chrome apps/extensions are not inspectable.
 整个流程已经走通，核心概念学完
 
 # todo
-react bootstrap
+*  [material-ui](http://www.material-ui.com/#/components/menu)：?能否布局
+  *  npm install material-ui --save  //UNMET PEER DEPENDENCY 版本不兼容
+  *  import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; //App.js
+*  [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 
 # 教程
 *  [react中文教程](http://reactjs.cn/react/docs/getting-started-zh-CN.html)

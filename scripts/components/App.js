@@ -1,5 +1,9 @@
 import React, { PropTypes } from "react";
 
+//material-ui test
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyAwesomeReactComponent from './MyAwesomeReactComponent';
+
 //app 业务逻辑写这里
 
 export class Form extends React.Component { //表单组件
@@ -180,6 +184,9 @@ export default class App extends React.Component {
         <List items={this.state.items}/>
         <button onClick={this.onSyncClick.bind(this)} disabled={disabled}>Sync(同步数据)!</button>
         <Preferences server={this.state.server} />
+        <MuiThemeProvider>
+          <MyAwesomeReactComponent />
+        </MuiThemeProvider>
       </div>
     );
   }
